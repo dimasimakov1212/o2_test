@@ -3,18 +3,74 @@
 
 {% block content %}
 
-
-<div class="row mb-2">
-    <div class="col-md-12">
-        <div class="card flex-md-row mb-4 box-shadow h-md-250">
+<div class="col-8">
+<div class="row mb-4">
+    <div class="col-md-8">
+        <div class="card flex-md-row mb-4 box-shadow h-md-auto">
             <div class="card-body d-flex flex-column align-items-start">
 
                 <table class="table table-bordered table-striped">
 
                     <tbody>
                     <tr>
-                        <td>------------</td>
-                        <td>------------</td>
+                        <td>
+                            <div class="card text-center">Новокузнецк</div>
+                        </td>
+                        <td>
+                            <div class="card">
+
+                                <!-- Стили карточки -->
+                                <style>
+                                    .card:hover {
+                                      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+                                    }
+
+                                    .container {
+                                      display: flex;
+                                      align-items: center;
+                                      justify-content: center;
+                                    }
+
+                                    .triangle-button-left {
+                                      width: 0;
+                                  height: 0;
+                                  border-left: 20px solid transparent;
+                                  border-right: 20px solid transparent;
+                                  border-bottom: 20px solid #4CAF50; /* Цвет треугольника */
+                                  cursor: pointer;
+                                  margin-top: 10px; /* Отступ сверху */
+                                  margin-left: 10px; /* Отступ слева */
+                                  margin-bottom: 10px; /* Отступ снизу */
+                                    }
+
+                                    .triangle-button-right {
+                                      width: 0;
+                                  height: 0;
+                                  border-left: 20px solid transparent;
+                                  border-right: 20px solid transparent;
+                                  border-top: 20px solid #4CAF50; /* Цвет треугольника */
+                                  cursor: pointer;
+                                  margin-top: 10px; /* Отступ сверху */
+                                  margin-right: 10px; /* Отступ справа */
+                                  margin-bottom: 10px; /* Отступ снизу */
+                                    }
+
+                                    .triangle-text {
+                                      padding: 0 20px; /* Отступы по бокам текста */
+                                    }
+                                </style>
+
+                                <!-- Контент карточки -->
+                                <div class="container">
+                                    <div class="triangle-button-left" onclick="alert('Левая кнопка нажата!');"></div>
+                                    <div class="triangle-text">Иркутск</div>
+                                    <div class="triangle-button-right" onclick="alert('Правая кнопка нажата!');"></div>
+                                </div>
+
+
+                            </div>
+                        </td>
+
                     </tr>
                     <tr>
                         <td>------------</td>
@@ -34,5 +90,6 @@
         </div>
     </div>
 </div>
+    </div>
 
 {% endblock %}

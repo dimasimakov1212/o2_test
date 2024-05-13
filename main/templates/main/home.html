@@ -3,93 +3,228 @@
 
 {% block content %}
 
-<div class="col-8">
-<div class="row mb-4">
-    <div class="col-md-8">
-        <div class="card flex-md-row mb-4 box-shadow h-md-auto">
-            <div class="card-body d-flex flex-column align-items-start">
 
-                <table class="table table-bordered table-striped">
+<div class="col-10">
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <div class="card flex-md-row mb-4 box-shadow h-md-auto">
+                <div class="card-body d-flex flex-column align-items-start">
 
-                    <tbody>
-                    <tr>
-                        <td>
-                            <div class="card text-center">Новокузнецк</div>
-                        </td>
-                        <td>
-                            <div class="card">
+                    <table class="table table-bordered table-striped">
 
-                                <!-- Стили карточки -->
-                                <style>
-                                    .card:hover {
-                                      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-                                    }
+                        <tbody>
+                        <tr>
+                            <td>
+                                <div class="card text-center">Новокузнецк</div>
+                            </td>
 
-                                    .container {
-                                      display: flex;
-                                      align-items: center;
-                                      justify-content: center;
-                                    }
+                            <td>
+                                <div class="card">
 
-                                    .triangle-button-left {
-                                      width: 0;
-                                  height: 0;
-                                  border-left: 20px solid transparent;
-                                  border-right: 20px solid transparent;
-                                  border-bottom: 20px solid #4CAF50; /* Цвет треугольника */
-                                  cursor: pointer;
-                                  margin-top: 10px; /* Отступ сверху */
-                                  margin-left: 10px; /* Отступ слева */
-                                  margin-bottom: 10px; /* Отступ снизу */
-                                    }
+                                    <!-- Таблица, которая будет показана при нажатии кнопки -->
+                                    <div class="hidden-table" id="extraTableUp">
+                                        <table class="table-style">
+                                            <!-- Заголовки и строки таблицы -->
+                                            <tr>
+                                                <th class="fixed-width">Осмотр</th>
+                                                <th class="fixed-width">ТО</th>
+                                                <th class="fixed-width">СТО</th>
+                                                <th class="fixed-width">Перегруз</th>
+                                                <th class="fixed-width">Перегрев</th>
+                                            </tr>
 
-                                    .triangle-button-right {
-                                      width: 0;
-                                  height: 0;
-                                  border-left: 20px solid transparent;
-                                  border-right: 20px solid transparent;
-                                  border-top: 20px solid #4CAF50; /* Цвет треугольника */
-                                  cursor: pointer;
-                                  margin-top: 10px; /* Отступ сверху */
-                                  margin-right: 10px; /* Отступ справа */
-                                  margin-bottom: 10px; /* Отступ снизу */
-                                    }
+                                        </table>
+                                    </div>
 
-                                    .triangle-text {
-                                      padding: 0 20px; /* Отступы по бокам текста */
-                                    }
-                                </style>
 
-                                <!-- Контент карточки -->
-                                <div class="container">
-                                    <div class="triangle-button-left" onclick="alert('Левая кнопка нажата!');"></div>
-                                    <div class="triangle-text">Иркутск</div>
-                                    <div class="triangle-button-right" onclick="alert('Правая кнопка нажата!');"></div>
+                                    <!-- Контент карточки -->
+                                    <div class="container">
+                                        <div class="triangle-button-left" onclick="toggleTable1()"></div>
+                                        <div class="triangle-text" id="source">Иркутск</div>
+                                        <div class="triangle-button-right" onclick="toggleTable2()"></div>
+                                    </div>
+                                    <!-- Таблица, которая будет показана при нажатии кнопки -->
+                                    <div class="hidden-table" id="extraTableDown">
+                                        <table class="table-style">
+                                            <!-- Заголовки и строки таблицы -->
+                                            <tr>
+                                                <th>Время заезда</th>
+                                                <th>
+                                                    <div class="container">
+                                                        <div class="triangle-button-right"
+                                                             onclick="toggleTable3()"></div>
+                                                    </div>
+                                                </th>
+                                                <th>Время заезда</th>
+                                            </tr>
+
+                                        </table>
+                                    </div>
+                                    <!-- Таблица, которая будет показана при нажатии кнопки -->
+                                    <div class="hidden-table" id="extraTableDown2">
+                                        <table class="table-style">
+                                            <!-- Заголовки и строки таблицы -->
+                                            <tr>
+                                                <th colspan="5">Фактическое время прибытия</th>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="5" id="destination"></th>
+                                            </tr>
+                                            <tr>
+                                                <td class="fixed-width">Время заезда</td>
+                                                <td class="fixed-width">Время выезда</td>
+                                                <td class="fixed-width"></td>
+                                                <td class="fixed-width">Время заезда</td>
+                                                <td class="fixed-width">Время выезда</td>
+                                            </tr>
+
+                                        </table>
+                                    </div>
+
                                 </div>
+                            </td>
 
+                        </tr>
+                        <tr>
+                            <td>------------</td>
+                            <td>------------</td>
+                        </tr>
+                        <tr>
+                            <td>------------</td>
+                            <td>------------</td>
+                        </tr>
 
-                            </div>
-                        </td>
+                        </tbody>
+                    </table>
 
-                    </tr>
-                    <tr>
-                        <td>------------</td>
-                        <td>------------</td>
-                    </tr>
-                    <tr>
-                        <td>------------</td>
-                        <td>------------</td>
-                    </tr>
-
-                    </tbody>
-                </table>
-
-                <div class="mb-1 text-muted"></div>
-                <p class="card-text mb-auto"></p>
+                    <div class="mb-1 text-muted"></div>
+                    <p class="card-text mb-auto"></p>
+                </div>
             </div>
         </div>
     </div>
 </div>
-    </div>
+
+<!-- Стили карточки -->
+<style>
+    .card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .triangle-button-left {
+      width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid #4CAF50; /* Цвет треугольника */
+  cursor: pointer;
+  margin-top: 10px; /* Отступ сверху */
+  margin-left: 10px; /* Отступ слева */
+  margin-bottom: 10px; /* Отступ снизу */
+    }
+  .hidden-table {
+    display: none; /* Скрытие таблицы по умолчанию */
+    }
+  /* Стили для вашей таблицы */
+    .table-style {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    .fixed-width {
+      width: 150px; /* Фиксированная ширина столбца */
+    }
+    .table-style th, .table-style td {
+      border: 1px solid #000000;
+      padding: 8px;
+    }
+
+    .table-style tr:nth-child(even){background-color: #000000;}
+
+    .table-style tr:hover {background-color: #000000;}
+
+    .table-style th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: center; /* Выравнивание текста по центру */
+      background-color: #FFFFFF;
+      color: white;
+    }
+    /* Стили для заголовков таблицы */
+    .table-style th {
+      color: black; /* Цвет шрифта заголовков */
+    }
+
+    /* Стили для ячеек таблицы */
+    .table-style td {
+      color: black; /* Цвет шрифта ячеек */
+      text-align: center; /* Выравнивание текста по центру */
+    }
+
+    .triangle-button-right {
+      width: 0;
+      height: 0;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-top: 20px solid #4CAF50; /* Цвет треугольника */
+      cursor: pointer;
+      margin-top: 10px; /* Отступ сверху */
+      margin-right: 10px; /* Отступ справа */
+      margin-bottom: 10px; /* Отступ снизу */
+        }
+
+    .triangle-text {
+      padding: 0 20px; /* Отступы по бокам текста */
+    }
+</style>
+
+<script>
+    // Функция для переключения видимости таблицы 1
+    function toggleTable1() {
+      var table = document.getElementById("extraTableUp");
+      if (table.style.display === "none" || table.style.display === "") {
+    table.style.display = "block"; // Показать таблицу
+  } else {
+    table.style.display = "none"; // Скрыть таблицу
+      }
+    }
+</script>
+
+<script>
+    // Функция для переключения видимости таблицы 2
+    function toggleTable2() {
+      var table = document.getElementById("extraTableDown");
+      if (table.style.display === "none" || table.style.display === "") {
+    table.style.display = "block"; // Показать таблицу
+  } else {
+    table.style.display = "none"; // Скрыть таблицу
+      }
+    }
+</script>
+
+<script>
+    // Функция для переключения видимости таблицы 3
+    function toggleTable3() {
+      var table = document.getElementById("extraTableDown2");
+      if (table.style.display === "none" || table.style.display === "") {
+    table.style.display = "block"; // Показать таблицу
+  } else {
+    table.style.display = "none"; // Скрыть таблицу
+      }
+    }
+</script>
+<script>
+    window.onload = function() {
+      // Получаем текст из источника
+      var sourceText = document.getElementById('source').innerText;
+      // Устанавливаем текст в назначение
+      document.getElementById('destination').innerText = sourceText;
+    }
+</script>
 
 {% endblock %}

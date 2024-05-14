@@ -11,7 +11,6 @@
                 <div class="card-body d-flex flex-column align-items-start">
 
                     <table class="table table-bordered table-striped">
-
                         <tbody>
                         <tr>
                             <td>
@@ -20,7 +19,6 @@
 
                             <td>
                                 <div class="card">
-
                                     <!-- Таблица, которая будет показана при нажатии кнопки -->
                                     <div class="hidden-table" id="extraTableUp">
                                         <table class="table-style">
@@ -32,10 +30,8 @@
                                                 <th class="fixed-width">Перегруз</th>
                                                 <th class="fixed-width">Перегрев</th>
                                             </tr>
-
                                         </table>
                                     </div>
-
 
                                     <!-- Контент карточки -->
                                     <div class="container">
@@ -43,6 +39,7 @@
                                         <div class="triangle-text" id="source">Иркутск</div>
                                         <div class="triangle-button-right" onclick="toggleTable2()"></div>
                                     </div>
+
                                     <!-- Таблица, которая будет показана при нажатии кнопки -->
                                     <div class="hidden-table" id="extraTableDown">
                                         <table class="table-style">
@@ -57,9 +54,9 @@
                                                 </th>
                                                 <th>Время заезда</th>
                                             </tr>
-
                                         </table>
                                     </div>
+
                                     <!-- Таблица, которая будет показана при нажатии кнопки -->
                                     <div class="hidden-table" id="extraTableDown2">
                                         <table class="table-style">
@@ -77,14 +74,12 @@
                                                 <td class="fixed-width">Время заезда</td>
                                                 <td class="fixed-width">Время выезда</td>
                                             </tr>
-
                                         </table>
                                     </div>
-
                                 </div>
                             </td>
-
                         </tr>
+
                         <tr>
                             <td>------------</td>
                             <td>------------</td>
@@ -97,8 +92,6 @@
                         </tbody>
                     </table>
 
-                    <div class="mb-1 text-muted"></div>
-                    <p class="card-text mb-auto"></p>
                 </div>
             </div>
         </div>
@@ -131,13 +124,13 @@
   .hidden-table {
     display: none; /* Скрытие таблицы по умолчанию */
     }
-  /* Стили для вашей таблицы */
+  /* Стили таблицы */
     .table-style {
       border-collapse: collapse;
       width: 100%;
     }
     .fixed-width {
-      width: 150px; /* Фиксированная ширина столбца */
+      width: 100px; /* Фиксированная ширина столбца */
     }
     .table-style th, .table-style td {
       border: 1px solid #000000;
